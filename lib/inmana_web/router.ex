@@ -9,7 +9,11 @@ defmodule InmanaWeb.Router do
   scope "/api", InmanaWeb do
     pipe_through :api
 
+    # requisição, rota, Controller e action
     get "/", WelcomeController, :index
+
+    post "/restaurants", RestaurantsController, :create
+    post "/supplies", SuppliesController, :create
   end
 
   # Enables LiveDashboard only for development
